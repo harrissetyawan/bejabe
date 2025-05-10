@@ -1,0 +1,7 @@
+@layer calc;
+
+@layer calc {
+  #prospect-calc {
+    @import 'tailwindcss';
+  }
+}
