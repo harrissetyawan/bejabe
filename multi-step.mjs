@@ -16,7 +16,7 @@ let logoSvg = "https://cdn.prod.website-files.com/678bb0f77140ff853f58938b/681b4
 function Step0({onNext, setPowerOption, powerOption}) {
   console.log(powerOption);
   const [yes, setYes] = useState(0) // State untuk menyimpan pilihan Yes/No
-  let optionClass = "drop-shadow-sm bg-gray-50/100 flex flex-col w-[55%] rounded-xl p-2 py-5 border border-gray-300 cursor-pointer hover:bg-black hover:text-white transition-all duration-300 text-center";
+  let optionClass = "drop-shadow-sm flex flex-col w-[55%] rounded-xl p-2 py-5 border border-gray-300 cursor-pointer hover:bg-black hover:text-white transition-all duration-300 text-center";
   let selectedOptionClass = "bg-black text-white";
   let [selectedOption, setSelectedOption] = useState(null);
   
@@ -54,7 +54,7 @@ function Step0({onNext, setPowerOption, powerOption}) {
 
         <div class="flex gap-6 justify-center content-center items-center" id="power-option">
           <div 
-            class="${optionClass} ${selectedOption === 'offgrid' ? selectedOptionClass : ''}"
+            class="${optionClass} ${selectedOption === 'offgrid' ? selectedOptionClass : 'bg-gray-50/100'}"
             onClick=${() => {
               setSelectedOption('offgrid');
               setPowerOption("offgrid");
@@ -64,7 +64,7 @@ function Step0({onNext, setPowerOption, powerOption}) {
             <p class="text-gray-500 text-md">Fully on gen power</p>
           </div>
           <div 
-            class="${optionClass} ${selectedOption === 'ongrid' ? selectedOptionClass : ''}"
+            class="${optionClass} ${selectedOption === 'ongrid' ? selectedOptionClass : 'bg-gray-50/100'}"
             onClick=${() => {
               setSelectedOption('ongrid');
               setPowerOption("ongrid");
